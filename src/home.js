@@ -1,3 +1,3 @@
 import "./home.less";
 
-console.log("多个入口 home!");
+console.log("测试下 github 提交!");
