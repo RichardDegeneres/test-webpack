@@ -1,0 +1,1 @@
+{"version":3,"file":"home.xxxxxxxxxxxxxxxxxxxx.css","mappings":"AAAA;EACE;EACA;AACF","sources":["webpack:///./src/home.less"],"sourcesContent":["body {\n  padding: 24px;\n  border: 1px solid red;\n}\n"],"names":[],"sourceRoot":""}
