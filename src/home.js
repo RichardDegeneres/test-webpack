@@ -1,3 +1,3 @@
-import "./home.less";
+import styles from "./home.less";
 
-console.log("测试下 github 提交!");
+console.log(styles, "测试下 github 提交!");

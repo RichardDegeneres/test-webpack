@@ -85,7 +85,7 @@ module.exports = {
           // 和 style-loader 不能同时使用，功能不同
           MiniCssExtractPlugin.loader,
           // (3) 加载 css 文件
-          "css-loader",
+          { loader: "css-loader", options: { modules: true } },
           // (2) 添加浏览器供应商前缀
           "postcss-loader",
           // (1) 将 less 解析为 css
