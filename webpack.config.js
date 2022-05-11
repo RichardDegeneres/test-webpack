@@ -37,7 +37,7 @@ module.exports = {
     // 5. 设置应用入口 html 引入动态名 bundle 文件
     new HtmlWebpackPlugin({
       title: "html 应用 home",
-      filename: "public/home.html",
+      filename: "home.html",
       template: path.resolve(__dirname, "index.html"),
       chunks: ["home"],
     }),
@@ -45,9 +45,11 @@ module.exports = {
     // 6. 生成多 html 文件，引入相应的动态名 bundle 文件
     new HtmlWebpackPlugin({
       title: "html 应用 contact",
-      filename: "public/contact.html",
+      filename: "contact.html",
       template: path.resolve(__dirname, "index.html"),
       chunks: ["contact"],
+      // 16. 设置网站图标
+      favicon: path.resolve(__dirname, "favicon.jpg"),
     }),
 
     // 7. 每次生成新 dist 打包文件时，清除上次的文件
@@ -113,17 +115,38 @@ module.exports = {
         ],
       },
 
-      // 13. 转译 js 文件
+      // 13. 转译 js 文件, 13 和 14 不能同时配置
+      // {
+      //   test: /\.m?js/i,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: "babel-loader",
+      //     options: {
+      //       presets: [["@babel/preset-env", { targets: "default" }]],
+      //     },
+      //   },
+      // },
+
+      // 14. 配置解析 React jsx 文件
       {
-        test: /\.m?js/i,
+        test: /\.jsx?/i,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: [["@babel/preset-env", { targets: "default" }]],
+            babelrc: true,
           },
         },
       },
     ],
+  },
+
+  // 15. 配置开发环境服务器，实时重新加载
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    compress: true,
+    port: 9000,
   },
 };
