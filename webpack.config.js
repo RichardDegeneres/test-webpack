@@ -112,6 +112,18 @@ module.exports = {
           },
         ],
       },
+
+      // 13. 转译 js 文件
+      {
+        test: /\.m?js/i,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-env", { targets: "default" }]],
+          },
+        },
+      },
     ],
   },
 };
