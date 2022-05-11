@@ -1,1 +1,0 @@
-{"version":3,"file":"contact.xxxxxxxxxxxxxxxxxxxx.bundle.js","mappings":"mBAEAA,QAAQC,IAAI,kB","sources":["webpack:///./src/contact.js"],"sourcesContent":["import \"./contact.less\";\n\nconsole.log(\"多个入口 contact!\");\n"],"names":["console","log"],"sourceRoot":""}

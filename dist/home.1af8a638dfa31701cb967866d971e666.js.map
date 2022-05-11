@@ -1,1 +1,0 @@
-{"version":3,"file":"home.xxxxxxxxxxxxxxxxxxxx.bundle.js","mappings":"mBAEAA,QAAQC,IAAI,e","sources":["webpack:///./src/home.js"],"sourcesContent":["import \"./home.less\";\n\nconsole.log(\"多个入口 home!\");\n"],"names":["console","log"],"sourceRoot":""}

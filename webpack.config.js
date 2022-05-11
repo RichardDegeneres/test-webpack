@@ -71,7 +71,7 @@ module.exports = {
           // (3) style loader 是将 css 文件打包注入到 html 的 style 标签
           "style-loader",
           // (2) 加载 css 文件
-          "css-loader",
+          { loader: "css-loader", options: { modules: true } },
           // (1) 添加浏览器供应商前缀
           "postcss-loader",
         ],
@@ -90,6 +90,26 @@ module.exports = {
           "postcss-loader",
           // (1) 将 less 解析为 css
           "less-loader",
+        ],
+      },
+      // 12. 打包图片
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            // 将图片打包成 base64
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+              // 超出限制使用 file-loader
+              fallback: {
+                loader: "file-loader",
+                options: {
+                  name: "[contenthash].[ext]",
+                },
+              },
+            },
+          },
         ],
       },
     ],
