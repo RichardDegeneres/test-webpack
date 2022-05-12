@@ -61,6 +61,9 @@ module.exports = {
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].css",
     }),
+
+    // 17. 热更新
+    new webpack.HotModuleReplacementPlugin(),
   ],
 
   module: {
@@ -146,6 +149,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, "dist"),
     },
+    hot: true,
     compress: true,
     port: 9000,
   },
