@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // 10. 仅 webpack5 支持该插件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// 21. 打包分析工具
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   // 1. 设置模式 production | development | none
@@ -64,6 +66,9 @@ module.exports = {
 
     // 17. 热更新
     new webpack.HotModuleReplacementPlugin(),
+
+    // 21. 打包分析工具
+    new BundleAnalyzerPlugin(),
   ],
 
   module: {
@@ -152,5 +157,17 @@ module.exports = {
     hot: true,
     compress: true,
     port: 9000,
+  },
+
+  // 20. code-splitting 之 splitChunksPlugin
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+
+  // 22. 关闭入口文件打包体积超过 244kb 的提示
+  performance: {
+    hints: false,
   },
 };
