@@ -14,3 +14,7 @@
 2. react-dom 用作 DOM 和 server 渲染的入口点
 3. @babel/preset-react
 4. webpack-dev-server 提供实时重新加载, 访问页面需要加 dist 中 *.html 的相对路径
+
+## 参考文献
+
+1. [webpack](https://juejin.cn/post/6844904031240863758#heading-14)

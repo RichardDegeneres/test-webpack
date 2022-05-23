@@ -5,15 +5,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // 10. 仅 webpack5 支持该插件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// 21. 打包分析工具
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+// // 21. 打包分析工具
+// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   // 1. 设置模式 production | development | none
-  mode: "production",
+  // mode: "production",
 
   // 2. 配置 source-map 生成规则
-  devtool: false,
+  // devtool: false,
 
   // 3. 多入口文件配置
   entry: {
@@ -65,10 +65,10 @@ module.exports = {
     }),
 
     // 17. 热更新
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
 
-    // 21. 打包分析工具
-    new BundleAnalyzerPlugin(),
+    // // 21. 打包分析工具
+    // new BundleAnalyzerPlugin(),
   ],
 
   module: {
@@ -149,22 +149,22 @@ module.exports = {
     ],
   },
 
-  // 15. 配置开发环境服务器，实时重新加载
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
-    hot: true,
-    compress: true,
-    port: 9000,
-  },
+  // 15. 配置本地开发环境服务器环境，实时重新加载
+  // devServer: {
+  //   static: {
+  //     directory: path.resolve(__dirname, "dist"),
+  //   },
+  //   hot: true,
+  //   compress: true,
+  //   port: 9000,
+  // },
 
-  // 20. code-splitting 之 splitChunksPlugin
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
-  },
+  // // 20. code-splitting 之 splitChunksPlugin
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: "all",
+  //   },
+  // },
 
   // 22. 关闭入口文件打包体积超过 244kb 的提示
   performance: {
